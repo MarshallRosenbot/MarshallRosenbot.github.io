@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Empathy Bot</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="nvc.css" rel="stylesheet">
+
+    <!-- Custom Font -->
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+    <div id="data"></div>
+    <div id="center-div">
+
+
+        <h1 class="inline"><img id="giraffe" src="giraffe-head-tilted.png">Empathy Bot</h1>
+
+        <div id="chatbox"></div>
+         
+        <form autocomplete="off" onsubmit="return respond()" name="message" id="chat-form" action="">
+            <input name="usermsg" type="text" id="usermsg" size="63" />
+            <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+        </form>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- emotions and needs json -->
+    <script type="text/javascript" src="emotions.js"></script>
+    <script type="text/javascript" src="needs.js"></script>
+
+    <!-- Main JS -->
+    <script type="text/javascript" src="intelligence.js"></script>
+    <!-- <script type="text/javascript" src="extra.js"></script> -->
+
+    <footer>
+    <p><small>Created by <span class="slanted">Leo Proechel</span></small></p>
+    <p><small class="slanted">Feelings and needs list: (c) 2005 by Center for Nonviolent Communication<br>
+    Website: www.cnvc.org Email: cnvc@cnvc.org Phone: +1.505.244.4041</small></p>
+    </footer>
+
+</body>
+
+</html>

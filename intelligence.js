@@ -1,3 +1,26 @@
+
+var keys = Object.values(emotions);
+var other = Object.keys(emotions);
+var dupe = false;
+
+// for (var k = 0; k < keys.length; k++) {
+
+// for(var i=0;i<keys.length;i++){
+//  for(var j=i+1;j<keys.length;j++){
+ 	
+// 	   if(emotions[keys[i]] === emotions[keys[j]]){
+// 	     console.log(other[i] + "==" + other[j-1])
+// 	     dupe = true;
+// 	   }
+
+//  }
+//  if(dupe){ console.log("dupe value is there.."); break; }
+// }
+
+// }
+
+
+
 var restart = function(){
 	myEmotions = ""
 	maybeEmotion = []
@@ -83,7 +106,12 @@ var respond = function() {
 	    case "no":
 	    	if (myEmotions[emotionIteration] == undefined) { newResponse("Sorry, I don't understand what you're saying. Can you try again?"); break; }
 	        emotionIteration++
-	        newResponse(randFailedFeeling() + "<strong>" + translate(myEmotions[emotionIteration]) + "</strong>?")
+	        if (translation[myEmotions[emotionIteration]] == undefined) {
+	        	newResponse("I'm having trouble guessing at your feelings. Maybe if you try saying it a different way I would have better luck. The more you give me the more likely that I will get it right.")
+	        }
+	        else {
+	        	newResponse(randFailedFeeling() + "<strong>" + translate(myEmotions[emotionIteration]) + "</strong>?")
+	    	}
 	        break;
 	    // case "maybe":
 	    // 	maybeEmotion.push(translate(myEmotions[emotionIteration]))
@@ -134,19 +162,6 @@ var respond = function() {
 	return false;
 }
 
-// function escape(key) {
-//   var escapeRegex = /[=:]/g;
-//   var escaperLookup = {
-//     '=': '=0',
-//     ':': '=2'
-//   };
-//   var escapedString = ('' + key).replace(escapeRegex, function (match) {
-//     return escaperLookup[match];
-//   });
-
-//   return '$' + escapedString;
-// }
-
 var submitMessage = function() {
 	restart();
 
@@ -157,10 +172,10 @@ var submitMessage = function() {
 	var url = "https://allorigins.us/get?url=" + encodeURIComponent("https://watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone?version=2016-05-19&text=")
 
 	var message = $('#usermsg').val()
-	console.log(message)
+	// console.log(message)
 
 	var call = url + encodeURIComponent(encodeURIComponent(message)) + "&callback=?"
-	console.log(call)
+	// console.log(call)
 
 $.ajax({
       crossOrigin: true,
@@ -169,7 +184,7 @@ $.ajax({
       success:function(data){
 
 
-	    console.log(data.contents)
+	    // console.log(data.contents)
 	    contents = JSON.parse(data.contents)
 
 	    // If no data available for input

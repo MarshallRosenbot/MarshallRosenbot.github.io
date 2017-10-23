@@ -49,10 +49,10 @@
     width: 45px;
     height: 20px;
     position: relative;
-    left: 2px;
+    left: -5px;
     top: -15.5px;
     background: url(loading_dots.gif) no-repeat center;
-    background-size: 127%;
+    background-size: 100%;
     display: inline-block;
 }
 
@@ -65,8 +65,9 @@
     display: inline;
     position: relative;
     top: -20px;
-/*    margin-left: -21px;
-    left: 29px;*/
+    font-size: 15px;
+    /*margin-left: -21px;*/
+    /*left: 29px;*/
 }
 
 #giraffe {

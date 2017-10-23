@@ -134,29 +134,51 @@ var respond = function() {
 	return false;
 }
 
+// function escape(key) {
+//   var escapeRegex = /[=:]/g;
+//   var escaperLookup = {
+//     '=': '=0',
+//     ':': '=2'
+//   };
+//   var escapedString = ('' + key).replace(escapeRegex, function (match) {
+//     return escaperLookup[match];
+//   });
+
+//   return '$' + escapedString;
+// }
 
 var submitMessage = function() {
 	restart();
 
-	var url = "http://anyorigin.com/go?url=https%3A//watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone%3Fversion%3D2016-05-19%26text%3D"
+	// var url = "http://anyorigin.com/go?url=https%3A//watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone%3Fversion%3D2016-05-19%26text%3D"
+
+	// var url = "https://allorigins.us/get?url=https%3A//watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone%3Fversion%3D2016-05-19%26text%3D"
+
+	var url = "http://allorigins.us/get?url=" + encodeURIComponent("https://watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone?version=2016-05-19&text=")
 
 	var message = $('#usermsg').val()
+	console.log(message)
 
-	var call = url + encodeURIComponent(message) + "&callback=?"
+	var call = url + encodeURIComponent(encodeURIComponent(message)) + "&callback=?"
+	console.log(call)
 
-	$.ajax({
-	    url: call,
-	    jsonp: "callback",
-	    dataType: "jsonp",
-	    success: function( data ) {
-	    
+$.ajax({
+      crossOrigin: true,
+      url : call,
+      type : "GET",
+      success:function(data){
+
+
+	    console.log(data.contents)
+	    contents = JSON.parse(data.contents)
+
 	    // If no data available for input
-	    if (data.contents.document_tone == undefined) {
+	    if (contents.document_tone == undefined) {
 	    	newResponse("Sorry, I don't really understand what you're saying. Can you try again?");
 	    	return false;
 	    }
 
-	    response = data.contents.document_tone.tone_categories
+	    response = contents.document_tone.tone_categories
 
 		emotionalTone = response[0].tones
 		languageTone = response[1].tones

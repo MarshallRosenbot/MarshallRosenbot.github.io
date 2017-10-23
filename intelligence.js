@@ -154,7 +154,7 @@ var submitMessage = function() {
 
 	// var url = "https://allorigins.us/get?url=https%3A//watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone%3Fversion%3D2016-05-19%26text%3D"
 
-	var url = "http://allorigins.us/get?url=" + encodeURIComponent("https://watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone?version=2016-05-19&text=")
+	var url = "https://allorigins.us/get?url=" + encodeURIComponent("https://watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone?version=2016-05-19&text=")
 
 	var message = $('#usermsg').val()
 	console.log(message)

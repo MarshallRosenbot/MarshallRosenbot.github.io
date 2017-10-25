@@ -183,9 +183,8 @@ $.ajax({
       type : "GET",
       success:function(data){
 
-
-	    // console.log(data.contents)
-	    contents = JSON.parse(data.contents)
+	    console.log(JSON.parse( data.split("typeof  === 'function' && (")[1].split(",'status':")[0].split(");")[0] ) )
+	    contents = JSON.parse( JSON.parse( data.split("typeof  === 'function' && (")[1].split(",'status':")[0].split(");")[0] ).contents )
 
 	    // If no data available for input
 	    if (contents.document_tone == undefined) {

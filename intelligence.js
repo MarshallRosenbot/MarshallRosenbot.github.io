@@ -101,7 +101,7 @@ var respond = function() {
 	        mainEmotion = translate(myEmotions[emotionIteration])
 	        mainEmotionUntranslated = myEmotions[emotionIteration]
 	        sessionOne = false
-			newResponse(randIntroNeed() + mainEmotion + " because your need for <strong>" + myNeeds[needIteration].toLowerCase() + "</strong>" + randOutroNeed(mainEmotionUntranslated) + "<br>(You can type 'start over' at any time if you want to give me give more context and let me try again.)")
+			newResponse(randIntroNeed() + mainEmotion + " because your need for <strong>" + myNeeds[needIteration].toLowerCase() + "</strong>" + randOutroNeed(mainEmotionUntranslated) + "<br>(You can type 'start over' at any time if you want to give me more context and let me try again.)")
 	        break;
 	    case "no":
 	    	if (myEmotions[emotionIteration] == undefined) { newResponse("Sorry, I don't understand what you're saying. Can you try again?"); break; }

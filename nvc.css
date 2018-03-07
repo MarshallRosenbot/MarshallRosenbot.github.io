@@ -14,6 +14,33 @@
 	padding: 10px;
 }
 
+#needs-box {
+    margin-right: 3px;
+    margin-left: 0px;
+}
+
+#emotions-box {
+    margin-left: 3px;
+    margin-right: 0px;
+}
+
+#needs-box, #emotions-box {
+    height: 314px;
+    width: 49%;
+    /* margin: auto; */
+    overflow: scroll;
+    overflow-x: auto;
+    text-align: left;
+    border: 2px solid black;
+    margin-bottom: 5px;
+    padding: 10px;
+    display: inline-block;
+}
+
+#needs-box h3, #emotions-box h3 {
+    text-decoration: underline;
+}
+
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
@@ -31,6 +58,15 @@
     float: left;
 }
 
+#usermsgArea {
+    height: 200px;
+    border: 2px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    float: left;
+}
+
 #submitmsg {
     width: 17%;
     float: right;
@@ -38,6 +74,16 @@
 
 #submitmsg:focus {
 	outline: none;
+}
+
+#submitmsgFormat {
+    height: 50px;
+    border: 2px solid black;
+    outline: none !important;
+    width: 17%;
+    margin-right: 100%;
+    margin-left: 42%;
+    margin-top: 20px;
 }
 
 #center-div {
@@ -111,6 +157,14 @@ data {
     margin-bottom: 20px;
 }
 
+#other-app {
+    margin: auto;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 150px;
+    font-style: italic;
+}
+
 form {
 	width: 100%;
 }
@@ -119,7 +173,7 @@ footer {
     text-align: center;
     padding-top: 18px;
     position: inherit;
-    margin-top: 80px;
+    margin-top: 30px;
     font-size: 10px;
 }
 

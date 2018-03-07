@@ -19,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Marshall Rosenbot</title>
+    <title>Marshall Rosenbot - Analyzer</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -44,20 +44,17 @@
     <div id="center-div">
 
 
-        <h1 class="inline"><img id="giraffe" src="giraffe-head-tilted.png">Marshall Rosenbot</h1>
+        <h1 class="inline"><img id="giraffe" src="giraffe-head-tilted.png">MRbot - Message Analyzer</h1>
 
-        <div id="chatbox"></div>
+        <div id="needs-box"><h3>Emotions</h3></div>
+        <div id="emotions-box"><h3>Needs</h3></div>
          
         <form autocomplete="off" onsubmit="return respond()" name="message" id="chat-form" action="">
-            <input name="usermsg" type="text" id="usermsg" size="63" />
-            <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            <textarea name="usermsgArea" type="text" id="usermsgArea" size="63" ></textarea>
+            <input name="submitmsgFormat" type="submit" id="submitmsgFormat" value="Analyze" />
         </form>
 
     </div>
-
-    <p id="other-app">Want to skip the chatbot and get a straghtforward analysis of a message?<br>
-       I just made an analysis version of this app: <a href="https://marshallrosenbot.github.io/analyzer">MRbot Message Analyzer</a>
-    </p>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -70,9 +67,10 @@
     <script type="text/javascript" src="needs.js"></script>
 
     <!-- Main JS -->
-    <script type="text/javascript" src="intelligence.js"></script>
+    <script type="text/javascript" src="analyzer.js"></script>
     <!-- <script type="text/javascript" src="extra.js"></script> -->
-
+    <p id="other-app">Go to chatbot version: <a href="https://marshallrosenbot.github.io/analyzer">MR Chatbot</a>
+    </p>
     <footer>
     <p><small>Created by <span class="slanted">Leo Proechel</span></small></p>
     <p><small class="slanted">Feelings and needs lists: © 2005 by Center for Nonviolent Communication<br>
